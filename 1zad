@@ -1,0 +1,9 @@
+result = []
+
+for num in range(1000, 3001):
+    if num % 9 == 0 and num % 5 != 0:
+        result.append(num)
+
+result_str = ', '.join(map(str, result))
+
+print(result_str)
