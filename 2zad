@@ -1,0 +1,12 @@
+input_phrase = input("Unesite rečenicu: ")
+
+phrase_split = input_phrase.split(' ')
+
+unique_words = []
+
+for word in phrase_split:
+    if word not in unique_words:
+        unique_words.append(word)
+
+unique_words.sort()
+print('Sortirane reci:', ' '.join(unique_words))

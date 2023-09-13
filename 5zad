@@ -1,0 +1,33 @@
+import random
+
+class CandyMan:
+    def __init__(self):
+        self.total_size = 0
+        self.total_number = 0
+        self.red_sticks = 0
+
+    def add_candy(self):
+        size = random.randint(1, 100)
+        red = random.choice([True, False])
+        self.total_size += size
+        self.total_number += 1
+        if red:
+            self.red_sticks += 1
+
+    def get_a_random_candy(self):
+        size = random.randint(1, 100)
+        red = random.choice([True, False])
+        self.total_number -= 1
+        self.total_size -= size
+        if red:
+            self.red_sticks -= 1
+
+    def get_average_size(self):
+        if self.total_number == 0:
+            return 0
+        return self.total_size / self.total_number
+
+    def get_red_candy_chance(self):
+        if self.total_number == 0:
+            return 0
+        return (self.red_sticks / self.total_number) * 100
